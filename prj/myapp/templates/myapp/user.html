@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <link rel="shortcut icon" href="{% static 'prj/img/beer.jpeg' %}">
+  <meta charset="utf-8">
+  <title>お酒管理</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'prj/css/styles.css' %}">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+
+<body>
+  <header>
+    <div class="container">
+      <i id="open_menu" class="fas fa-bars"></i>
+      <!--<nav id="menu" class="shown">-->
+      <nav id="menu">
+        <i id="close_menu" class="fas fa-times"></i>
+        <ul>
+          <li>
+            <a href="{% url 'myapp:home' %}"><i class = "fas fa-home fa-2x"></i></a>
+          </li>
+          <li>
+            <a href="{% url 'myapp:User_View' %}"><i class = "fas fa-user fa-2x"></i></a>
+          </li>
+          <li>
+            <a href="{% url 'myapp:database' %}"><i class = "fas fa-list-alt fa-2x"></i></a>
+          </li>
+          <li>
+            <a href="{% url 'myapp:HowtoUse_View' %}"><i class = "fas fa-cog fa-2x"></i></a>
+          </li>
+
+        </ul>
+
+      </nav>
+      <h1>ユーザー情報</h1>
+    </div>
+  </header>
+
+  <section class="features">
+    <form action="{% url 'myapp:User_View' %}" method="post">
+      {% csrf_token %}
+      <div class="container">
+        <p>生年月日　
+          <input type="date">
+
+        </p>
+        <p>身長
+          <input type="number" name="number" min="100" max="200">
+
+        </p>
+
+        <label>体重</label>
+        {{ form_weight.weight }}
+        <p>{{ form_weight.weight.help_text }}</p>
+
+        <label>年齢</label>
+        {{ form_weight.age }}
+        <p>{{ form_weight.age.help_text }}</p>
+        <tr><td></td><td><input type="submit" value="保存"></td></tr>
+      </div>
+
+
+
+    </form>
+  </section>
+
+  <script src="{% static 'prj/js/menu.js' %}"></script>
+</body>
+
+</html>
