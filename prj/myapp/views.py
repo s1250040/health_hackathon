@@ -26,7 +26,7 @@ DRINK_NAMES = {
 }
 
 def home(req):
-    f = open('/Users/yuhi/django/prj/myapp/name.py', 'w')
+    f = open('./name.py', 'w')
     f.write("NAME = \"\" ")
     f.close()
     if req.method == 'GET':

@@ -14,7 +14,7 @@ h1 {
   color:#fff;
   text-shadow:0em 0.05em 0 rgba(0,0,0,0.35)
 }
-button {
+/* button {
   color:#454545;
   background:transparent;
   border-width:2px;
@@ -28,8 +28,8 @@ button {
   text-align:center;
   font-family:comfortaa;
   font-weight:bold
-}
-button:before, button:after {
+} */
+/* button:before, button:after {
   content:'';
   display:block;
   position:absolute;
@@ -55,12 +55,12 @@ button:hover:before, button:hover:after {
   width:calc(100% + 12px);
   height:calc(100% + 12px);
   border-color:#fff
-}
-button:hover {
+} */
+/* button:hover {
   color:#353535;
   background-color:#fff;
   border-color:#fff
-}
+} */
 .panel {
   max-width:960px;
   text-align:center;
